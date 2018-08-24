@@ -5,5 +5,5 @@
   <text class="userName">hello  {{userInfo.nickName}} </text>
   <view class="goStudy" catchtap="handleClick">
     <text>开启小程序之旅</text>
-  </view>
+  </view> 
 </view>
