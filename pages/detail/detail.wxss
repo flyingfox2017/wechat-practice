@@ -1,0 +1,57 @@
+/* pages/detail/detail.wxss */
+.detailContainer {
+  display: flex;
+  flex-direction: column;
+}
+.headImg {
+  width: 100%;
+  height: 460rpx;
+}
+.avatar_date {
+  margin: 10rpx 0;
+}
+.avatar_date image {
+  width: 64rpx;
+  height: 64rpx;
+  vertical-align: middle;
+}
+.avatar_date text {
+  font-size: 32rpx;
+  margin-left: 10rpx;
+}
+.company {
+  font-size: 38rpx;
+  font-weight: 700;
+  margin: 10rpx;
+}
+.collection_share {
+  margin-right: 50rpx;
+  float: right;  
+}
+.collection_share image{
+  width: 90rpx;
+  height: 90rpx;
+  margin: 5rpx;
+}
+/*这里开启定位,是因为下面的line中使用了absolute绝对定位, 绝对定位是相对于父级元素或者是最近的开启了的定位的父级(祖先)元素*/
+.collection_share_container {
+  position: relative;
+}
+.line { 
+  width: 90%;
+  height: 1rpx;
+  background: #eee;
+  position: absolute;
+  top: 45rpx;
+  left:5%;
+  z-index: -1;
+}
+button {
+  width: 280rpx;
+  height: 80rpx;
+}
+.content {
+  font-size: 32rpx;
+  text-indent: 32rpx;
+  margin-top: 10rpx;
+}

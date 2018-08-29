@@ -1,0 +1,19 @@
+<!--pages/detail/detail.wxml-->
+<view class='detailContainer'>
+  <image src="{{detailArr.detail_img}}" class="headImg"></image>
+  <view class='avatar_date'>
+    <image src="{{detailArr.avatar}}"></image>
+    <text>{{detailArr.date}}</text>
+    <text>{{detailArr.author}}</text>    
+  </view>
+  <text class="company">{{detailArr.title}}</text>
+  <view class="collection_share_container"> 
+    <view class="collection_share">
+      <image src="/images/icon/collection-anti.png"></image>
+      <image src="/images/icon/share.png"></image>
+    </view>
+    <view class="line"></view>
+  </view>
+  <button>转发此文章</button>
+  <text class="content">{{detailArr.detail_content}}</text>
+</view>

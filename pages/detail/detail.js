@@ -1,34 +1,24 @@
-// pages/list/list.js
-//这里引入文件只能用相对路径
+// pages/detail/detail.js
 let datas = require("../../datas/list-data.js");
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    listArr:[]
+    detailArr:[],
+    index: null
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    //this.setData({}),设置 上面 data中的值. 
+    let index = options.index;
     this.setData({
-      listArr: datas.list_data
+      detailArr: datas.list_data[index],
+      index // k-v同名可以不用写.
     });
-  },
-  gotoDetail(event){
-    let index = event.currentTarget.dataset.index;
-    wx.navigateTo({
-      url: '/pages/detail/detail?index='+index,
-    })
-  },
-  //点击轮播图跳转到对应页面
-  carouselToDetail(event){
-    let index = event.target.dataset.index;
-    wx.navigateTo({
-      url: '/pages/detail/detail?index='+index
-    });
+   
   },
 
   /**

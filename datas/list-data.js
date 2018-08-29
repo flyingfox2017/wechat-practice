@@ -1,5 +1,4 @@
-let list_data = [
-  
+let list_data = [  
   {
 
     date: 'may 19 2018',
@@ -148,4 +147,5 @@ let list_data = [
   },
 ];
 
+//这里导出对象,同名属性简写.
 module.exports = {list_data};
