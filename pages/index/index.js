@@ -54,7 +54,7 @@ Page({
       console.log("拒绝");
     }
   },  
-  handleClick() {
+  handleClick() {    
     wx.navigateTo({
       url: '/pages/list/list'
     });

@@ -1,3 +1,5 @@
 App({
-  
+  data:{
+    movieDetail:[]
+  }
 });

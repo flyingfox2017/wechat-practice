@@ -7,7 +7,8 @@ Page({
   data: {
     detailArr:[],
     index: null,
-    isCollected:false
+    isCollected:false,
+    isPlay:false
   },  
   /**
    * 生命周期函数--监听页面加载
@@ -22,8 +23,7 @@ Page({
     //在这里就给缓存赋值为空. 后面点击事件里读取缓存的时候就不会失败了.
     wx.getStorage({
       key:'isCollected',
-      success:(storageDatas)=>{
-        console.log(storageDatas);
+      success:(storageDatas)=>{        
         if (storageDatas.data[index]){
           this.setData({
             isCollected: true
@@ -66,9 +66,50 @@ Page({
           }
         });
       }
+    });   
+  },
+  handleMusic(){
+    let isPlay = !this.data.isPlay;
+    this.setData({
+      isPlay
     });
-   
-    
+    //控制音乐播放
+    let bgMusic = wx.getBackgroundAudioManager();
+    if(isPlay){
+      let {dataUrl,title} = this.data.detailArr.music;       
+      bgMusic.title = title;
+      bgMusic.src= dataUrl;
+      bgMusic.play();
+    }else{
+      bgMusic.stop();
+    }
+    bgMusic.onPlay(() => {180     
+      this.setData({
+        isPlay:true
+      });
+    });
+    bgMusic.onStop(()=>{      
+      this.setData({
+        isPlay:false
+      });
+    });
+    bgMusic.onPause(()=>{      
+      this.setData({
+        isPlay:false
+      });
+    });
+  },
+  //点击分享功能
+  handleShare(){
+    wx.showActionSheet({
+      itemList: ['分享到空间', '分享到微博', '分享到朋友圈'],
+      success: function (res) {
+        console.log(res.tapIndex)
+      },
+      fail: function (res) {
+        console.log(res.errMsg)
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -79,7 +120,7 @@ Page({
 
   /**
    * 生命周期函数--监听页面显示
-   */
+   */ 
   onShow: function () {
   
   },

@@ -2,6 +2,7 @@
 .detailContainer {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .headImg {
   width: 100%;
@@ -54,4 +55,12 @@ button {
   font-size: 32rpx;
   text-indent: 32rpx;
   margin-top: 10rpx;
+}
+.music {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  left: 50%;
+  top: 200rpx;
+  margin-left: -30rpx;
 }
